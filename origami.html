@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Origami — Inu Cho</title>
+<meta name="description" content="Origami portfolio of Inu Cho: selected folding projects from 2022 to 2026.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<script>
+  (function() {
+    try {
+      const savedTheme = localStorage.getItem('inu_theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } else {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+      }
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<header class="site-nav-bar">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="name">Inu Cho</span>
+      <span class="role">UC Berkeley</span>
+    </a>
+    <div class="nav-cluster">
+      <nav class="site-links" aria-label="Main Navigation">
+        <a href="index.html">Overview</a>
+        <a href="research.html">Research</a>
+        <a href="cv.html">Curriculum Vitae</a>
+        <a href="origami.html" aria-current="page">Origami</a>
+        <a href="goals.html">Aims &amp; Milestones</a>
+      </nav>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="theme-icon-sun" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="theme-icon-moon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <span class="theme-toggle-text">Dark</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" id="main">
+  <!-- Clean, Grounded Header -->
+  <header style="padding: 4.5rem 0 2rem; border-bottom: 1px solid var(--ink);">
+    <p class="subhead" style="color: var(--navy); font-size: 0.95rem; font-weight: 500; margin: 0 0 0.5rem; letter-spacing: 0.01em;">
+      Selected Work
+    </p>
+    <h1 style="font-family: var(--font-serif); font-size: clamp(2.75rem, 6vw, 4.25rem); font-weight: 400; margin: 0 0 1rem; letter-spacing: -0.025em; line-height: 1.08;">
+      Origami
+    </h1>
+    <p style="font-size: 1.15rem; color: var(--muted); line-height: 1.6; max-width: 60ch; margin: 0;">
+      A portfolio of origami models folded over the past several years, featuring designs by Satoshi Kamiya, Robert Lang, Beth Johnson, Naomiki Sato, Chris Palmer, Jeff Beynon, and Jun Maekawa.
+    </p>
+  </header>
+
+  <!-- Models Grid -->
+  <section class="content-section" aria-label="Origami Models">
+    <div class="section-head">
+      <h2>Selected Models</h2>
+      <span class="section-note">10 pieces</span>
+    </div>
+    <div class="origami-grid">
+
+      <!-- Model 01: Japanese Maple Leaf -->
+      <article class="origami-card">
+        <div class="origami-media" data-zoom-plate="assets/origami/model_1.jpg" data-plate-title="Japanese Maple Leaf" data-plate-meta="Designed by Satoshi Kamiya · 6″ × 6″, Tissue Foil">
+          <img src="assets/origami/model_1.jpg" alt="Japanese Maple Leaf origami designed by Satoshi Kamiya, folded by Inu Cho" loading="lazy">
+          <span class="origami-plate-badge">Enlarge ↗</span>
+        </div>
+        <div class="origami-body">
+          <div class="origami-meta-top">
+            <span class="origami-plate-num">01</span>
+            <span class="origami-designer">Satoshi Kamiya</span>
+          </div>
+          <h3 class="origami-title">Japanese Maple Leaf</h3>
+          <div class="origami-specs">
+            <span class="origami-spec-pill">6&Prime; &times; 6&Prime;</span>
+            <span class="origami-spec-pill">Tissue Foil</span>
+          </div>
+          <p class="origami-analysis">
+            A planar composition emphasizing vein structure, symmetry, and the geometric logic of botanical form.
+          </p>
+        </div>
+      </article>
+
+      <!-- Model 02: Guinea Pig -->
+      <article class="origami-card">
+        <div class="origami-media" data-zoom-plate="assets/origami/model_2.jpg" data-plate-title="Guinea Pig" data-plate-meta="Designed by Dr. Robert J. Lang · 10″ × 10″, Metallic Foil">
+          <img src="assets/origami/model_2.jpg" alt="Guinea Pig origami designed by Robert Lang, folded by Inu Cho" loading="lazy">
+          <span class="origami-plate-badge">Enlarge ↗</span>
+        </div>
+        <div class="origami-body">
+          <div class="origami-meta-top">
+            <span class="origami-plate-num">02</span>
+            <span class="origami-designer">Dr. Robert J. Lang</span>
+          </div>
+          <h3 class="origami-title">Guinea Pig</h3>
+          <div class="origami-specs">
+            <span class="origami-spec-pill">10&Prime; &times; 10&Prime;</span>
+            <span class="origami-spec-pill">Metallic Foil</span>
+          </div>
+          <p class="origami-analysis">
+            A compact form defined by rounded shaping and subtle layering, capturing the natural posture and volume through geometric planning and circle-packing.
+          </p>
+        </div>
+      </article>
+
+      <!-- Model 03: Koala -->
+      <article class="origami-card">
+        <div class="origami-media" data-zoom-plate="assets/origami/model_3.jpg" data-plate-title="Koala" data-plate-meta="Designed by Beth Johnson · 10″ × 10″, Elephant Hide">
+          <img src="assets/origami/model_3.jpg" alt="Koala origami designed by Beth Johnson, folded by Inu Cho" loading="lazy">
+          <span class="origami-plate-badge">Enlarge ↗</span>
+        </div>
+        <div class="origami-body">
+          <div class="origami-meta-top">
+            <span class="origami-plate-num">03</span>
+            <span class="origami-designer">Beth Johnson</span>
+          </div>
+          <h3 class="origami-title">Koala</h3>
+          <div class="origami-specs">
+            <span class="origami-spec-pill">10&Prime; &times; 10&Prime;</span>
+            <span class="origami-spec-pill">Elephant Hide</span>
+          </div>
+          <p class="origami-analysis">
+            Broad pleats and compressed layers define a soft, simplified figure that relies on curvature and abstract shaping rather than a structured box-pleat.
+          </p>
+        </div>
+      </article>
+
+      <!-- Model 04: Phoenix 3.5 -->
+      <article class="origami-card">
+        <div class="origami-media" data-zoom-plate="assets/origami/model_4.jpg" data-plate-title="Phoenix 3.5" data-plate-meta="Designed by Satoshi Kamiya · 25″ × 25″, Metallic Foil">
+          <img src="assets/origami/model_4.jpg" alt="Phoenix 3.5 origami designed by Satoshi Kamiya, folded by Inu Cho" loading="lazy">
+          <span class="origami-plate-badge">Enlarge ↗</span>
+        </div>
+        <div class="origami-body">
+          <div class="origami-meta-top">
+            <span class="origami-plate-num">04</span>
+            <span class="origami-designer">Satoshi Kamiya</span>
+          </div>
+          <h3 class="origami-title">Phoenix 3.5</h3>
+          <div class="origami-specs">
+            <span class="origami-spec-pill">25&Prime; &times; 25&Prime;</span>
+            <span class="origami-spec-pill">Metallic Foil</span>
+          </div>
+          <p class="origami-analysis">
+            A complex figure with extended wings and tail, showcasing multi-layered folding and anatomical logic. The folds erupt from the midpoint of the paper to symbolize the rebirth of a phoenix.
+          </p>
+        </div>
+      </article>
+
+      <!-- Model 05: Pentagon Rose -->
+      <article class="origami-card">
+        <div class="origami-media" data-zoom-plate="assets/origami/model_5.jpg" data-plate-title="Pentagon Rose" data-plate-meta="Designed by Naomiki Sato · 10″ × 10″, Elephant Hide">
+          <img src="assets/origami/model_5.jpg" alt="Pentagon Rose origami designed by Naomiki Sato, folded by Inu Cho" loading="lazy">
+          <span class="origami-plate-badge">Enlarge ↗</span>
+        </div>
+        <div class="origami-body">
+          <div class="origami-meta-top">
+            <span class="origami-plate-num">05</span>
+            <span class="origami-designer">Naomiki Sato</span>
+          </div>
+          <h3 class="origami-title">Pentagon Rose</h3>
+          <div class="origami-specs">
+            <span class="origami-spec-pill">10&Prime; &times; 10&Prime;</span>
+            <span class="origami-spec-pill">Elephant Hide</span>
+          </div>
+          <p class="origami-analysis">
+            Constructed from a pentagonal base, the spiral layering creates a floral form with curved folds.
+          </p>
+        </div>
+      </article>
+
+      <!-- Model 06: Motorcycle -->
+      <article class="origami-card">
+        <div class="origami-media" data-zoom-plate="assets/origami/model_6.jpg" data-plate-title="Motorcycle" data-plate-meta="Designed by Satoshi Kamiya · Assorted Papers">
+          <img src="assets/origami/model_6.jpg" alt="Motorcycle origami designed by Satoshi Kamiya, folded by Inu Cho" loading="lazy">
+          <span class="origami-plate-badge">Enlarge ↗</span>
+        </div>
+        <div class="origami-body">
+          <div class="origami-meta-top">
+            <span class="origami-plate-num">06</span>
+            <span class="origami-designer">Satoshi Kamiya</span>
+          </div>
+          <h3 class="origami-title">Motorcycle</h3>
+          <div class="origami-specs">
+            <span class="origami-spec-pill">Multi-Sheet</span>
+            <span class="origami-spec-pill">Assorted Papers</span>
+          </div>
+          <p class="origami-analysis">
+            A multipart assembly that translates mechanical complexity into fold-based articulation and structural precision.
+          </p>
+        </div>
+      </article>
+
+      <!-- Model 07: Hat Tent -->
+      <article class="origami-card">
+        <div class="origami-media" data-zoom-plate="assets/origami/model_7.jpg" data-plate-title="Hat Tent" data-plate-meta="Designed by Chris Palmer · 8″ × 8″, Elephant Hide">
+          <img src="assets/origami/model_7.jpg" alt="Hat Tent origami designed by Chris Palmer, folded by Inu Cho" loading="lazy">
+          <span class="origami-plate-badge">Enlarge ↗</span>
+        </div>
+        <div class="origami-body">
+          <div class="origami-meta-top">
+            <span class="origami-plate-num">07</span>
+            <span class="origami-designer">Chris Palmer</span>
+          </div>
+          <h3 class="origami-title">Hat Tent</h3>
+          <div class="origami-specs">
+            <span class="origami-spec-pill">8&Prime; &times; 8&Prime;</span>
+            <span class="origami-spec-pill">Elephant Hide</span>
+          </div>
+          <p class="origami-analysis">
+            A radial-creased dome exploring symmetry and spatial volume through repetitive patterning.
+          </p>
+        </div>
+      </article>
+
+      <!-- Model 08: Lyrebird -->
+      <article class="origami-card">
+        <div class="origami-media" data-zoom-plate="assets/origami/model_8.jpg" data-plate-title="Lyrebird" data-plate-meta="Designed by Satoshi Kamiya · 10″ × 10″, Washi Paper">
+          <img src="assets/origami/model_8.jpg" alt="Lyrebird origami designed by Satoshi Kamiya, folded by Inu Cho" loading="lazy">
+          <span class="origami-plate-badge">Enlarge ↗</span>
+        </div>
+        <div class="origami-body">
+          <div class="origami-meta-top">
+            <span class="origami-plate-num">08</span>
+            <span class="origami-designer">Satoshi Kamiya</span>
+          </div>
+          <h3 class="origami-title">Lyrebird</h3>
+          <div class="origami-specs">
+            <span class="origami-spec-pill">10&Prime; &times; 10&Prime;</span>
+            <span class="origami-spec-pill">Washi Paper</span>
+          </div>
+          <p class="origami-analysis">
+            A slender composition with extended tail structures and balanced stance, demonstrating refined proportion and fold economy.
+          </p>
+        </div>
+      </article>
+
+      <!-- Model 09: Spring -->
+      <article class="origami-card">
+        <div class="origami-media" data-zoom-plate="assets/origami/model_9.jpg" data-plate-title="Spring" data-plate-meta="Designed by Jeff Beynon · 2″ × 11″, Washi Paper">
+          <img src="assets/origami/model_9.jpg" alt="Spring origami designed by Jeff Beynon, folded by Inu Cho" loading="lazy">
+          <span class="origami-plate-badge">Enlarge ↗</span>
+        </div>
+        <div class="origami-body">
+          <div class="origami-meta-top">
+            <span class="origami-plate-num">09</span>
+            <span class="origami-designer">Jeff Beynon</span>
+          </div>
+          <h3 class="origami-title">Spring</h3>
+          <div class="origami-specs">
+            <span class="origami-spec-pill">2&Prime; &times; 11&Prime;</span>
+            <span class="origami-spec-pill">Washi Paper</span>
+          </div>
+          <p class="origami-analysis">
+            A continuous helical structure expressing curvature, compression, and release through controlled tension along a single axis.
+          </p>
+        </div>
+      </article>
+
+      <!-- Model 10: Rabbit -->
+      <article class="origami-card">
+        <div class="origami-media" data-zoom-plate="assets/origami/model_10.jpg" data-plate-title="Rabbit" data-plate-meta="Designed by Jun Maekawa · 6″ × 6″, Tissue Foil">
+          <img src="assets/origami/model_10.jpg" alt="Rabbit origami designed by Jun Maekawa, folded by Inu Cho" loading="lazy">
+          <span class="origami-plate-badge">Enlarge ↗</span>
+        </div>
+        <div class="origami-body">
+          <div class="origami-meta-top">
+            <span class="origami-plate-num">10</span>
+            <span class="origami-designer">Jun Maekawa</span>
+          </div>
+          <h3 class="origami-title">Rabbit</h3>
+          <div class="origami-specs">
+            <span class="origami-spec-pill">6&Prime; &times; 6&Prime;</span>
+            <span class="origami-spec-pill">Tissue Foil</span>
+          </div>
+          <p class="origami-analysis">
+            A geometric study in proportion, using angled folds to define posture and balance.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+</main>
+
+<!-- Lightbox Dialog for full-size photo -->
+<dialog class="plate-lightbox" id="plate-lightbox" aria-label="Origami Photo">
+  <div class="lightbox-inner">
+    <div class="lightbox-header">
+      <div>
+        <span class="lightbox-title">Photo</span>
+        <span class="lightbox-meta"></span>
+      </div>
+      <button class="lightbox-close" type="button" aria-label="Close dialog">&times;</button>
+    </div>
+    <div class="lightbox-body">
+      <img class="lightbox-img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E" alt="Full size origami photo">
+    </div>
+  </div>
+</dialog>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <strong>Inu Cho</strong> &middot; Chemical Biology &middot; UC Berkeley
+    </div>
+    <div>
+      <a href="index.html">Overview</a> &middot;
+      <a href="research.html">Research</a> &middot;
+      <a href="cv.html">CV</a> &middot;
+      <a href="origami.html">Origami</a> &middot;
+      <a href="goals.html">Aims</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/scrollcraft.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>

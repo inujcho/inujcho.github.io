@@ -1,0 +1,1160 @@
+/* ==========================================================================
+   Inu Cho — Academic & Clinical Portfolio
+   Design Authority & Craft System
+   Palette: Elegant Off-White (#FAF8F5), Deep Oxford Navy (#0C2340), Crisp Ink (#181B1F)
+   ========================================================================== */
+
+:root {
+  color-scheme: light dark;
+
+  /* Refined Editorial Palette — Light (Default) */
+  --bg:           #FAF8F5;   /* Warm parchment off-white */
+  --surface:      #F2EFE9;   /* Subtle tinted stone */
+  --card-bg:      #FFFFFF;
+  --ink:          #181B1F;   /* Crisp deep charcoal */
+  --navy:         #0C2340;   /* Academic Oxford/Berkeley navy */
+  --navy-hover:   #061324;
+  --navy-wash:    #EEF3F8;   /* Quiet tinted slate */
+  --navy-border:  #D4DFEC;
+  --muted:        #454C55;   /* Secondary prose */
+  --faint:        #6E7782;   /* Metadata & subtle dates */
+  --rule:         #E2E5E9;   /* Hairline borders */
+  --rule-subtle:  #ECEFF3;
+  --focus:        #0C2340;
+  --shadow-sm:    0 1px 3px rgba(12, 35, 64, 0.05);
+  --shadow-md:    0 4px 16px rgba(12, 35, 64, 0.08);
+
+  /* Typography */
+  --font-serif: "Cormorant Garamond", "Newsreader", "Iowan Old Style", Georgia, serif;
+  --font-sans:  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg:           #0D131A;   /* Deep midnight slate navy */
+    --surface:      #141D26;   /* Rich surface */
+    --card-bg:      #111822;
+    --ink:          #F0F4F8;   /* Bright warm ivory */
+    --navy:         #8CB4E0;   /* Luminous Berkeley blue */
+    --navy-hover:   #A9CAF0;
+    --navy-wash:    #172433;
+    --navy-border:  #25374C;
+    --muted:        #B4C0CE;
+    --faint:        #8E9CAE;
+    --rule:         #222F3E;
+    --rule-subtle:  #182330;
+    --focus:        #8CB4E0;
+    --shadow-sm:    0 1px 3px rgba(0, 0, 0, 0.35);
+    --shadow-md:    0 4px 16px rgba(0, 0, 0, 0.55);
+  }
+}
+
+html[data-theme="light"] {
+  color-scheme: light !important;
+  --bg:           #FAF8F5;
+  --surface:      #F2EFE9;
+  --card-bg:      #FFFFFF;
+  --ink:          #181B1F;
+  --navy:         #0C2340;
+  --navy-hover:   #061324;
+  --navy-wash:    #EEF3F8;
+  --navy-border:  #D4DFEC;
+  --muted:        #454C55;
+  --faint:        #656F7C;
+  --rule:         #E2E5E9;
+  --rule-subtle:  #ECEFF3;
+  --focus:        #0C2340;
+  --shadow-sm:    0 1px 3px rgba(12, 35, 64, 0.05);
+  --shadow-md:    0 4px 16px rgba(12, 35, 64, 0.08);
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark !important;
+  --bg:           #0D131A;
+  --surface:      #141D26;
+  --card-bg:      #111822;
+  --ink:          #F0F4F8;
+  --navy:         #8CB4E0;
+  --navy-hover:   #A9CAF0;
+  --navy-wash:    #172433;
+  --navy-border:  #25374C;
+  --muted:        #B4C0CE;
+  --faint:        #8E9CAE;
+  --rule:         #222F3E;
+  --rule-subtle:  #182330;
+  --focus:        #8CB4E0;
+  --shadow-sm:    0 1px 3px rgba(0, 0, 0, 0.35);
+  --shadow-md:    0 4px 16px rgba(0, 0, 0, 0.55);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 5rem;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Enable native multi-page view transitions */
+@view-transition {
+  navigation: auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(root) {
+    animation: 160ms cubic-bezier(0.4, 0, 1, 1) both vtFadeOut;
+  }
+  ::view-transition-new(root) {
+    animation: 220ms cubic-bezier(0.16, 1, 0.3, 1) both vtFadeIn;
+  }
+  @keyframes vtFadeOut {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-3px); }
+  }
+  @keyframes vtFadeIn {
+    from { opacity: 0; transform: translateY(3px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Progressive smooth entrance animation */
+  main {
+    animation: mainFadeIn 0.24s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+  }
+  body.page-leaving main {
+    opacity: 0;
+    transform: translateY(-3px);
+    transition: opacity 0.14s cubic-bezier(0.4, 0, 1, 1), transform 0.14s cubic-bezier(0.4, 0, 1, 1);
+  }
+  @keyframes mainFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Tailored slim, smooth scrollbar */
+@media (pointer: fine) {
+  ::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--bg);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--rule);
+    border: 2px solid var(--bg);
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--faint);
+  }
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--rule) var(--bg);
+  }
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Browser surface customization — custom scrollbars, selection, focus */
+::selection {
+  background-color: var(--navy-wash);
+  color: var(--navy);
+}
+
+main {
+  flex: 1;
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+p {
+  margin: 0 0 1.25em;
+  max-width: 65ch;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Tasteful links: quiet hairline underline that turns navy on hover */
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.24em;
+  text-decoration-color: color-mix(in srgb, currentColor 30%, transparent);
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+a:hover {
+  color: var(--navy);
+  text-decoration-color: var(--navy);
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.wrap {
+  max-width: 66rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.skip {
+  position: absolute;
+  left: 1.5rem;
+  top: -3.5rem;
+  background: var(--surface);
+  color: var(--ink);
+  padding: 0.5rem 1rem;
+  z-index: 100;
+  font-size: 0.85rem;
+  border: 1px solid var(--rule);
+}
+.skip:focus {
+  top: 1rem;
+}
+
+/* ==========================================================================
+   Header Navigation — Minimal, refined, perfectly aligned
+   ========================================================================== */
+
+.site-nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--rule);
+}
+
+.site-nav-bar .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 3.85rem;
+  gap: 1.5rem;
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.brand .name {
+  font-family: var(--font-serif);
+  font-size: 1.55rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.brand .role {
+  font-size: 0.85rem;
+  color: var(--faint);
+  font-weight: 400;
+}
+
+.nav-cluster {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.site-links {
+  display: flex;
+  gap: 1.6rem;
+  font-size: 0.92rem;
+}
+
+.site-links a {
+  text-decoration: none;
+  color: var(--muted);
+  padding: 0.35rem 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.site-links a:hover {
+  color: var(--ink);
+}
+
+.site-links a[aria-current="page"] {
+  color: var(--navy);
+  font-weight: 500;
+  border-bottom-color: var(--navy);
+}
+
+/* Tasteful Theme Switcher */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--surface);
+  color: var(--muted);
+  border: 1px solid var(--rule);
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  line-height: 1;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.theme-toggle:hover {
+  background: var(--navy-wash);
+  color: var(--navy);
+  border-color: var(--navy-border);
+}
+
+.theme-toggle svg {
+  flex-shrink: 0;
+}
+
+/* Sun/Moon icon visibility based on data-theme and media query */
+.theme-icon-sun {
+  display: none;
+}
+.theme-icon-moon {
+  display: block;
+}
+
+:root[data-theme="dark"] .theme-icon-sun {
+  display: block;
+}
+:root[data-theme="dark"] .theme-icon-moon {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-icon-sun {
+    display: block;
+  }
+  :root:not([data-theme="light"]) .theme-icon-moon {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-nav-bar .wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-block: 0.85rem;
+    gap: 0.75rem;
+  }
+  .nav-cluster {
+    width: 100%;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .site-links {
+    gap: 1.15rem;
+    flex-wrap: wrap;
+  }
+}
+
+/* ==========================================================================
+   Hero Section — Clean portrait, poised editorial introduction
+   ========================================================================== */
+
+.hero-profile {
+  padding: 4.5rem 0 3.25rem;
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  gap: 4rem;
+  align-items: center;
+  border-bottom: 1px solid var(--rule);
+}
+
+.hero-profile .subhead {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--navy);
+  letter-spacing: 0.01em;
+  margin: 0 0 0.85rem;
+}
+
+h1.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 7vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin: 0 0 1.25rem;
+  color: var(--ink);
+}
+
+.hero-bio {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--muted);
+  max-width: 54ch;
+  margin: 0 0 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.92rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.65rem 1.35rem;
+  border-radius: 4px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--navy);
+  color: #FFFFFF;
+  border: 1px solid var(--navy);
+}
+.btn-primary:hover {
+  background: color-mix(in srgb, var(--navy) 85%, black);
+  color: #FFFFFF;
+}
+
+.btn-secondary {
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--rule);
+}
+.btn-secondary:hover {
+  border-color: var(--muted);
+  color: var(--ink);
+}
+
+.portrait-wrapper {
+  width: 190px;
+  margin-left: auto;
+}
+
+.portrait-photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 4px;
+  object-fit: cover;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+@media (max-width: 820px) {
+  .hero-profile {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-top: 3.5rem;
+  }
+  .portrait-wrapper {
+    order: -1;
+    margin-left: 0;
+    width: 150px;
+  }
+}
+
+/* ==========================================================================
+   Status Banner — Discreet, thoughtful "Currently" note
+   ========================================================================== */
+
+.current-status {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  align-items: baseline;
+  gap: 2rem;
+  font-size: 0.98rem;
+}
+
+.status-tag {
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--navy);
+  white-space: nowrap;
+}
+
+.status-text {
+  color: var(--muted);
+  line-height: 1.55;
+  margin: 0;
+  max-width: none;
+}
+
+@media (max-width: 680px) {
+  .current-status {
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+}
+
+/* ==========================================================================
+   Editorial Content Sections & Clean Lists
+   ========================================================================== */
+
+.content-section {
+  padding: 4.5rem 0 3.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 0.65rem;
+}
+
+.section-head h2 {
+  font-family: var(--font-serif);
+  font-size: 2.1rem;
+  font-weight: 400;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.section-head .section-note {
+  font-size: 0.88rem;
+  color: var(--faint);
+}
+
+/* Clean, balanced rows */
+.editorial-list > li {
+  padding: 1.6rem 0;
+  border-bottom: 1px solid var(--rule-subtle);
+  display: grid;
+  grid-template-columns: 1fr 140px;
+  gap: 0.25rem 2rem;
+}
+
+.editorial-list > li:first-child {
+  padding-top: 0.5rem;
+}
+
+.editorial-list .item-heading {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 500;
+  line-height: 1.3;
+  margin: 0 0 0.35rem;
+  color: var(--ink);
+}
+
+.editorial-list .item-heading a {
+  text-decoration: none;
+}
+.editorial-list .item-heading a:hover {
+  color: var(--navy);
+}
+
+.editorial-list .item-meta {
+  color: var(--navy);
+  font-weight: 500;
+  font-size: 0.92rem;
+  margin-bottom: 0.5rem;
+}
+
+.editorial-list .item-desc {
+  font-size: 1.02rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0 0 0.5rem;
+  max-width: 60ch;
+}
+
+.editorial-list .item-desc ul {
+  margin: 0.4rem 0 0;
+  padding-left: 1.2rem;
+  list-style: disc;
+}
+.editorial-list .item-desc ul li {
+  margin-bottom: 0.3rem;
+}
+
+.editorial-list .item-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  font-size: 0.88rem;
+  color: var(--faint);
+}
+
+.editorial-list .item-date {
+  font-size: 0.92rem;
+  color: var(--faint);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 680px) {
+  .editorial-list > li {
+    grid-template-columns: 1fr;
+  }
+  .editorial-list .item-date {
+    text-align: left;
+    margin-top: 0.25rem;
+  }
+}
+
+/* Two-column overview grid */
+.grid-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  padding: 4rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.grid-col h3 {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 400;
+  margin: 0 0 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+}
+
+.grid-col p {
+  font-size: 1.0625rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.info-rows {
+  margin-top: 1.5rem;
+}
+
+.info-rows li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--rule-subtle);
+  font-size: 0.92rem;
+}
+
+.info-rows .label {
+  color: var(--muted);
+}
+.info-rows .val {
+  color: var(--ink);
+  font-weight: 500;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .grid-two-col {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* ==========================================================================
+   Milestones & Timeline
+   ========================================================================== */
+
+.timeline-flow {
+  position: relative;
+  padding-left: 2rem;
+  margin-left: 0.5rem;
+  border-left: 1px solid var(--rule);
+}
+
+.timeline-step {
+  position: relative;
+  padding-bottom: 2.25rem;
+}
+
+.timeline-step::before {
+  content: "";
+  position: absolute;
+  left: -2.35rem;
+  top: 0.45rem;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--navy);
+}
+
+.timeline-step .step-date {
+  font-size: 0.85rem;
+  color: var(--faint);
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.timeline-step .step-title {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 0 0 0.35rem;
+  color: var(--ink);
+}
+
+.timeline-step .step-detail {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Origami Portfolio — Applied Geometry & Spatial Articulation
+   ========================================================================== */
+
+.origami-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.25rem;
+  margin-top: 1.5rem;
+}
+
+.origami-card {
+  background: var(--card-bg);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.origami-card:hover {
+  border-color: var(--navy-border);
+  box-shadow: var(--shadow-md);
+}
+
+.origami-media {
+  position: relative;
+  background: var(--surface);
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-bottom: 1px solid var(--rule-subtle);
+  cursor: pointer;
+}
+
+.origami-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.35s ease;
+}
+
+.origami-card:hover .origami-media img {
+  transform: scale(1.025);
+}
+
+.origami-plate-badge {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  background: color-mix(in srgb, var(--ink) 85%, transparent);
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  letter-spacing: 0.02em;
+  opacity: 0.9;
+  transition: opacity 0.15s ease, background 0.15s ease;
+}
+
+.origami-card:hover .origami-plate-badge {
+  opacity: 1;
+  background: #0C2340;
+  color: #FFFFFF;
+}
+
+.origami-body {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.origami-meta-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+}
+
+.origami-plate-num {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--faint);
+  font-weight: 600;
+}
+
+.origami-designer {
+  font-size: 0.88rem;
+  color: var(--navy);
+  font-weight: 500;
+}
+
+.origami-title {
+  font-family: var(--font-serif);
+  font-size: 1.65rem;
+  font-weight: 500;
+  line-height: 1.15;
+  margin: 0 0 0.85rem;
+  color: var(--ink);
+}
+
+.origami-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.origami-spec-pill {
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 0.78rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+  border: 1px solid var(--rule-subtle);
+  font-variant-numeric: tabular-nums;
+}
+
+.origami-analysis {
+  font-size: 0.96rem;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0;
+  flex: 1;
+}
+
+.origami-action {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule-subtle);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.origami-btn-plate {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  color: var(--navy);
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+}
+
+.origami-btn-plate:hover {
+  text-decoration: underline;
+}
+
+/* Lightbox Dialog */
+.plate-lightbox {
+  padding: 0;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: var(--bg);
+  color: var(--ink);
+  max-width: 90vw;
+  max-height: 90vh;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.45);
+}
+
+.plate-lightbox::backdrop {
+  background: rgba(10, 15, 22, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.lightbox-inner {
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+}
+
+.lightbox-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--rule);
+  background: var(--surface);
+}
+
+.lightbox-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 500;
+  margin: 0;
+  color: var(--ink);
+}
+
+.lightbox-meta {
+  font-size: 0.85rem;
+  color: var(--faint);
+  margin-left: 0.75rem;
+}
+
+.lightbox-close {
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.lightbox-close:hover {
+  color: var(--ink);
+  background: var(--rule-subtle);
+}
+
+.lightbox-body {
+  padding: 1rem;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000000;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+}
+
+@media (max-width: 860px) {
+  .origami-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* ==========================================================================
+   CV Page Header — Unified left-aligned editorial stack
+   ========================================================================== */
+
+.cv-page-header {
+  padding: 4.5rem 0 2rem;
+  border-bottom: 1px solid var(--ink);
+  text-align: left;
+}
+
+.cv-page-name {
+  font-family: var(--font-serif);
+  font-size: clamp(2.75rem, 6vw, 4rem);
+  font-weight: 400;
+  margin: 0 0 0.4rem;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  text-align: left;
+}
+
+.cv-page-sub {
+  font-size: 1.15rem;
+  color: var(--muted);
+  margin: 0 0 0.85rem;
+  text-align: left;
+}
+
+.cv-contact-lines,
+.cv-contact-line {
+  font-size: 0.95rem;
+  color: var(--faint);
+  line-height: 1.6;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+.cv-contact-lines div {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+.cv-contact-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.65rem;
+}
+
+.cv-contact-line .dot {
+  color: var(--rule);
+  user-select: none;
+}
+
+/* ==========================================================================
+   ScrollCraft Integration — Eased reveals, micro-depth, and fluid momentum
+   ========================================================================== */
+
+:root {
+  --sc-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --sc-ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+[data-sc-in] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 550ms var(--sc-ease-out), transform 550ms var(--sc-ease-out);
+  will-change: opacity, transform;
+}
+
+[data-sc-in].sc-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-sc-in] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* Micro-depth on interactive cards */
+[data-sc-tilt] {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.site-footer {
+  padding: 3.5rem 0;
+  font-size: 0.9rem;
+  color: var(--faint);
+  border-top: 1px solid var(--rule);
+  background: var(--bg);
+}
+
+.site-footer .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.site-footer a {
+  color: var(--muted);
+  text-decoration: none;
+}
+.site-footer a:hover {
+  color: var(--navy);
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Print Stylesheet (Prints as a clean, elegant CV)
+   ========================================================================== */
+
+@media print {
+  :root {
+    color-scheme: light;
+    --bg: #FFFFFF;
+    --ink: #111111;
+    --navy: #0C2340;
+    --surface: #FFFFFF;
+    --rule: #CCCCCC;
+    --rule-subtle: #EEEEEE;
+  }
+  .site-nav-bar, .site-footer, .btn, .skip {
+    display: none !important;
+  }
+  body {
+    background: #FFF;
+    font-size: 10pt;
+    line-height: 1.5;
+  }
+  .wrap {
+    max-width: 100%;
+    padding: 0;
+  }
+  .hero-profile {
+    padding: 1.5rem 0;
+    grid-template-columns: 1fr 120px;
+  }
+  .content-section {
+    padding: 1.5rem 0;
+    break-inside: avoid;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}

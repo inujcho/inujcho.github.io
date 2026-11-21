@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Research — Inu Cho</title>
+<meta name="description" content="Research investigations in biomaterials, computed tomography, and dental diagnostics by Inu Cho.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<script>
+  (function() {
+    try {
+      const savedTheme = localStorage.getItem('inu_theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } else {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+      }
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<header class="site-nav-bar">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="name">Inu Cho</span>
+      <span class="role">UC Berkeley</span>
+    </a>
+    <div class="nav-cluster">
+      <nav class="site-links" aria-label="Main Navigation">
+        <a href="index.html">Overview</a>
+        <a href="research.html" aria-current="page">Research</a>
+        <a href="cv.html">Curriculum Vitae</a>
+        <a href="origami.html">Origami</a>
+        <a href="goals.html">Aims &amp; Milestones</a>
+      </nav>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="theme-icon-sun" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="theme-icon-moon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <span class="theme-toggle-text">Dark</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" id="main">
+  <header style="padding: 4.5rem 0 2rem; border-bottom: 1px solid var(--ink);">
+    <p class="subhead" style="color: var(--navy); font-size: 0.95rem; font-weight: 500; margin: 0 0 0.5rem;">Laboratory Experience &amp; Projects</p>
+    <h1 style="font-family: var(--font-serif); font-size: clamp(2.75rem, 6vw, 4rem); font-weight: 400; margin: 0 0 1rem; letter-spacing: -0.025em;">
+      Research
+    </h1>
+    <p style="font-size: 1.2rem; color: var(--muted); line-height: 1.6; max-width: 58ch; margin: 0;">
+      Investigations spanning materials science, computed tomography diagnostics, microalgal bio-filtration, and peer scientific mentorship.
+    </p>
+  </header>
+
+  <!-- Complete Laboratory Appointments -->
+  <section class="content-section" id="appointments">
+    <div class="section-head">
+      <h2>Research Appointments</h2>
+      <span class="section-note">2023 – Present</span>
+    </div>
+
+    <ul class="editorial-list">
+      <li id="earthman">
+        <div>
+          <h3 class="item-heading">UC Irvine Earthman Lab</h3>
+          <div class="item-meta">Research Intern · Irvine, CA · Jul 2025 – Sep 2025</div>
+          <p class="item-desc">
+            Prepared 50 3D-printed teeth in acrylic mounts for Cone Beam Computed Tomography (CBCT) diagnostic testing and assisted with image analysis to evaluate structural changes. Collected and synthesized experimental data across 30 quantitative percussion diagnostic trials to assess dental structural integrity.
+          </p>
+          <div class="item-badges">
+            <span>CBCT Image Analysis</span>
+            <span>·</span>
+            <span>Quantitative Percussion Diagnostics</span>
+            <span>·</span>
+            <span>3D-Printed Specimen Mounts</span>
+          </div>
+        </div>
+        <div class="item-date">Summer 2025</div>
+      </li>
+
+      <li id="cabrillo">
+        <div>
+          <h3 class="item-heading">Cabrillo Marine Aquarium</h3>
+          <div class="item-meta">Independent Researcher · San Pedro, CA · Jul 2023 – Jun 2026</div>
+          <p class="item-desc">
+            Designed and conducted three independent, hypothesis-driven research projects in materials science, microbiology, and environmental conservation:
+          </p>
+          <div class="item-desc">
+            <ul>
+              <li><strong>Kappa-Carrageenan Hydrogel Reinforcement (2024–2025):</strong> Integrated bacterial exopolysaccharides into algal sulfated galactan matrices to enhance tensile strength and elastic modulus for surgical soft tissue scaffolds. Presented as a finalist in the Regeneron International Science and Engineering Fair (ISEF).</li>
+              <li><strong>Magnetic Field Induction in <i>Chlorella vulgaris</i> (2023–2024):</strong> Quantified metabolic acceleration, ammonia filtration kinetics, and oxygen output under static magnetic gradients. Received NASA Earth System Science Project Award.</li>
+              <li><strong>Marine Husbandry:</strong> Provided daily husbandry and specialized clinical care for 12 endangered marine species in the aquatic nursery facility.</li>
+            </ul>
+          </div>
+          <div class="item-badges">
+            <span>Regeneron ISEF Finalist (2025)</span>
+            <span>·</span>
+            <span>1st Place Applied Chemistry &amp; 1st Place Environmental Engineering (LACSEF)</span>
+          </div>
+        </div>
+        <div class="item-date">2023 – 2026</div>
+      </li>
+
+      <li id="mentor">
+        <div>
+          <h3 class="item-heading">PVPHS Science Research</h3>
+          <div class="item-meta">Student Mentor · Palos Verdes Peninsula, CA · Aug 2024 – Aug 2025</div>
+          <p class="item-desc">
+            Guided junior researchers through the scientific method, project development, and experimental design. Coached students on scientific communication, improving their presentations at regional science fairs.
+          </p>
+        </div>
+        <div class="item-date">2024 – 2025</div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Symposia Presentations -->
+  <section class="content-section" id="presentations">
+    <div class="section-head">
+      <h2>Conference Presentations</h2>
+      <span class="section-note">Juried Evaluation</span>
+    </div>
+
+    <ul class="editorial-list">
+      <li>
+        <div>
+          <h3 class="item-heading">Regeneron International Science and Engineering Fair (ISEF)</h3>
+          <p class="item-desc">Finalist presentation in Materials Science: Exopolysaccharide-reinforced carrageenan hydrogel architecture.</p>
+        </div>
+        <div class="item-date">May 2025</div>
+      </li>
+      <li>
+        <div>
+          <h3 class="item-heading">California State Science and Engineering Fair (CSEF)</h3>
+          <p class="item-desc">State presentation in Applied Chemistry &amp; Polymer Materials.</p>
+        </div>
+        <div class="item-date">Apr 2025</div>
+      </li>
+      <li>
+        <div>
+          <h3 class="item-heading">Los Angeles County Science and Engineering Fair</h3>
+          <p class="item-desc">1st Place in Chemistry: Applied Division.</p>
+        </div>
+        <div class="item-date">Mar 2025</div>
+      </li>
+      <li>
+        <div>
+          <h3 class="item-heading">California State Science and Engineering Fair (CSEF)</h3>
+          <p class="item-desc">State presentation in Environmental Management.</p>
+        </div>
+        <div class="item-date">Apr 2024</div>
+      </li>
+      <li>
+        <div>
+          <h3 class="item-heading">Los Angeles County Science and Engineering Fair</h3>
+          <p class="item-desc">1st Place in Environmental Engineering Division.</p>
+        </div>
+        <div class="item-date">Mar 2024</div>
+      </li>
+    </ul>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <strong>Inu Cho</strong> &middot; Chemical Biology &middot; UC Berkeley
+    </div>
+    <div>
+      <a href="index.html">Overview</a> &middot;
+      <a href="research.html">Research</a> &middot;
+      <a href="cv.html">CV</a> &middot;
+      <a href="origami.html">Origami</a> &middot;
+      <a href="goals.html">Aims</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/scrollcraft.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>
