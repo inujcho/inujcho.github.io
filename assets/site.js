@@ -27,6 +27,11 @@
       if (textSpan) {
         textSpan.textContent = isDark ? 'Light' : 'Dark';
       }
+      // Keep the iOS Safari toolbar / status bar tint in sync with the page
+      const themeColor = document.querySelector('meta[name="theme-color"]');
+      if (themeColor) {
+        themeColor.setAttribute('content', isDark ? '#0D131A' : '#FAF8F5');
+      }
     }
 
     // Set initial button state
